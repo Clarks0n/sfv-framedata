@@ -1,0 +1,6 @@
+{
+	"appId": "com.sfv.framedata",
+	"appName": "sfvframedata",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

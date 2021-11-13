@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './CharacterSelect.css';
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -10,11 +9,19 @@ import { getCharacterList } from '../../store/actions/characterList';
 import { Link } from "react-router-dom";
 
 const Item = styled(Button)(({ theme }) => ({
-  ...theme.typography.body2,
   padding: theme.spacing(2),
   textAlign: 'center',
-  color: 'yellow',
+  color: '#ffdf00',
   backgroundColor: '#212121',
+  '&:hover': {
+    backgroundColor: '#ad4029',
+    color: '#ffdf00',
+  }
+}));
+
+const Typho = styled(Typography)(({ theme }) => ({
+    color: '#ffdf00',
+    margin: 10
 }));
 
 const CharacterSelect = () => {
@@ -36,13 +43,13 @@ const CharacterSelect = () => {
 
     return (
         <Box sx={{ width: '100%' }}>
-            <Typography 
+            <Typho 
                 align='center'
-                variant="h4" 
-                className="textColor"
+                variant="h4"
+                classname="CS"
             >
                 Character List
-            </Typography>
+            </Typho>
             <Grid 
                 container 
                 rowSpacing={1} 
@@ -57,7 +64,8 @@ const CharacterSelect = () => {
                                     name: item
                                 }}
                             >
-                                <Item 
+                                <Item
+                                    variant="contained"
                                     fullWidth={true}
                                     // onClick={()=> {gege()}}
                                 >    

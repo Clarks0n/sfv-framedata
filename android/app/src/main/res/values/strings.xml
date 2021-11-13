@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">sfvframedata</string>
+    <string name="title_activity_main">sfvframedata</string>
+    <string name="package_name">com.sfv.framedata</string>
+    <string name="custom_url_scheme">com.sfv.framedata</string>
+</resources>
