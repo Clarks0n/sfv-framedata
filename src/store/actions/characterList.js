@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import json from '../../assets/data/frame.json';
 
 const initialStateValue = { 
-    characterList: []
+    characterList: [],
+    characterData: []
 };
 
 export const characterListSlice = createSlice({
@@ -14,10 +15,13 @@ export const characterListSlice = createSlice({
             for (let i in json) { charList.push(i)}
 
             state.characterList = charList;
+        },
+        getCharacterData: (state,action) => {
+            state.characterData = json[action.payload];
         }
     }
 });
 
-export const { getCharacterList } = characterListSlice.actions;
+export const { getCharacterList, getCharacterData } = characterListSlice.actions;
 
 export default characterListSlice.reducer;

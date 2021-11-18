@@ -40,13 +40,12 @@ const CharacterSelect = () => {
         dispatch(getCharacterList());
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
-
+    
     return (
         <Box sx={{ width: '100%' }}>
             <Typho 
                 align='center'
                 variant="h4"
-                classname="CS"
             >
                 Character List
             </Typho>
