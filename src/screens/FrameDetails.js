@@ -21,15 +21,14 @@ const Typho = styled(Typography)(({ theme }) => ({
 const ArrowIcon = styled(ArrowBackSharpIcon)(({ theme }) => ({
     color: '#ffdf00',
     margin: 10
-   
 }));
 
 const AntTabs = styled(Tabs)({
-    '.MuiTab-root': {
+    '& .MuiTab-root': {
         color: '#fff',
         backgroundColor:'#607d8a',
     },
-    '.Mui-selected': {
+    '& .MuiTab-root.Mui-selected': {
         color: '#FFD700'
     },
     '& .MuiTabs-indicator': {
