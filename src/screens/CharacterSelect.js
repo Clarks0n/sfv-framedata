@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useSelector, useDispatch } from 'react-redux';
-import { getCharacterList } from '../../store/actions/characterList';
+import { getCharacterList } from '../store/actions/characterList';
 import { Link } from "react-router-dom";
 
 const Item = styled(Button)(({ theme }) => ({

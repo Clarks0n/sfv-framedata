@@ -1,5 +1,5 @@
-import CharacterSelect from "./screens/CharacterSelect/CharacterSelect";
-import FrameDetails from './screens/FrameDetails/FrameDetails';
+import CharacterSelect from "./screens/CharacterSelect";
+import FrameDetails from './screens/FrameDetails';
 import './App.css';
 import { StyledEngineProvider } from '@mui/material/styles';
 

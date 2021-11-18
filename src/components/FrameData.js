@@ -5,10 +5,12 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
+const cellStyles = {
+    color: '#ffff33',
+    wordBreak: 'break-word',
+    padding: 0.5
+};
 
 const FrameData = (props) => {
     const { value, index, data } = props;
@@ -16,24 +18,18 @@ const FrameData = (props) => {
 
     const header = ["Move", "S" ,"A" ,"R" ,"oH" ,"oB"];
 
-
     function createData(Move, S, A, R, OH, OB) {
         return { Move, S, A, R, OH,OB };
     };
 
     function createRow() {
-        // console.log(data)
-        // console.log(data.normal["Abi Blaster"].moveName)
-        // console.log(Object.keys(data.normal).length)
-     
         let keysNormal = Object.keys(data.normal);
-        // console.log(data.normal[keysNormal[0]].moveName)
         let rows = [];
 
         for (let i = 0; i < Object.keys(data.normal).length; i++) {
             rows.push(
                 createData(
-                    data.normal[keysNormal[i]].moveName,
+                    data.normal[keysNormal[i]].cmnName !== undefined ? data.normal[keysNormal[i]].cmnName : data.normal[keysNormal[i]].moveName,
                     data.normal[keysNormal[i]].startup,
                     data.normal[keysNormal[i]].active,
                     data.normal[keysNormal[i]].recovery,
@@ -41,26 +37,27 @@ const FrameData = (props) => {
                     data.normal[keysNormal[i]].onBlock,
                 )
             )
-        }
+        };
 
         return rows;
     };
 
     useEffect(() => {
         setRows(createRow());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <div
             hidden={value !== index}
         >
-            <TableContainer component={Paper}>
-                <Table stickyHeader>
-                    <TableHead>
+            <TableContainer sx={{ maxHeight: window.innerHeight}} >
+                <Table stickyHeader padding="none" >
+                    <TableHead  >
                         <TableRow>
                             {header.map((item,i) => {
                                 return (
-                                    <TableCell align="center" key={i}>
+                                    <TableCell sx={{backgroundColor:'#303030', color: '#ffff33'}} align="center" key={i}>
                                         {item}
                                     </TableCell>
                                 )
@@ -73,22 +70,22 @@ const FrameData = (props) => {
                                 key={row.Move}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                                <TableCell align="center" sx={{ maxWidth: '30%' }}>
+                                <TableCell align="center" sx={cellStyles} >
                                     {row.Move}
                                 </TableCell>
-                                <TableCell align="center" sx={{ maxWidth: '20%', wordWrap: 'break-word' }}>
+                                <TableCell align="center" sx={cellStyles} >
                                     {row.S}
                                 </TableCell>
-                                <TableCell align="center" sx={{ maxWidth: '20%' ,wordWrap: 'break-word'}}>
+                                <TableCell align="center" sx={cellStyles}  >
                                     {row.A}
                                 </TableCell>
-                                <TableCell align="center" sx={{ maxWidth: '10%' }}>
+                                <TableCell align="center" sx={cellStyles}  >
                                     {row.R}
                                 </TableCell>
-                                <TableCell align="center" sx={{ maxWidth: '10%' }}>
+                                <TableCell align="center" sx={cellStyles}  >
                                     {row.OH}
                                 </TableCell>
-                                <TableCell align="center" sx={{ maxWidth: '10%' }}>
+                                <TableCell align="center" sx={cellStyles}  >
                                     {row.OB}
                                 </TableCell>
                             </TableRow>
