@@ -18,10 +18,16 @@ export const characterListSlice = createSlice({
         },
         getCharacterData: (state,action) => {
             state.characterData = json[action.payload];
-        }
+        },
+        resetCharacterList: (state) => {
+            state.characterList = [];
+        },
+        resetCharacterData: (state) => {
+            state.characterData = [];
+        },
     }
 });
 
-export const { getCharacterList, getCharacterData } = characterListSlice.actions;
+export const { getCharacterList, getCharacterData, resetCharacterList, resetCharacterData } = characterListSlice.actions;
 
 export default characterListSlice.reducer;

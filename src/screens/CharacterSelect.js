@@ -38,8 +38,9 @@ const CharacterSelect = () => {
  
     useEffect(() => {
         dispatch(getCharacterList());
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+    },[]);
     
     return (
         <Box sx={{ width: '100%' }}>
