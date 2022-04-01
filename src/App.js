@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CharacterSelect />} />
-          <Route path=":detailsid" element={<FrameDetails />} />
+          <Route path="/:detailsid/*" element={<FrameDetails />} />
           <Route
             path="*"
             element={

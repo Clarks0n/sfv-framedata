@@ -41,7 +41,9 @@ const FrameDetails = () => {
     const location = useLocation();
     const dispatch = useDispatch();
     let navigate = useNavigate();
-    const name = location.state.name;
+
+    const pathName = location.pathname;
+    const name = pathName.substring(1);
 
     const [value, setValue] = useState(0);
 
